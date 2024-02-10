@@ -1,4 +1,4 @@
-# Rawon
+# @clytage/discord-bot-template
 
 > A simple powerful Discord music bot built to fulfill your production desires. Easy to use, with no coding required.
 

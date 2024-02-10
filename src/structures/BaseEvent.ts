@@ -1,10 +1,14 @@
-import { Event } from "../typings/index.js";
 import { Rawon } from "./Rawon.js";
 
-export abstract class BaseEvent implements Event {
-    public constructor(public client: Rawon, public readonly name: Event["name"]) { }
+import { ClientEvents } from "discord.js";
 
-    public abstract execute(...args: any): any;
+export abstract class BaseEvent {
+    public constructor(
+        public readonly client: Rawon,
+        public readonly name: keyof ClientEvents
+    ) {}
+
+    public abstract execute(...args: unknown[]): Promisable<any>;
 }
 
-export type ExtendedEventConstructor = new (...args: ConstructorParameters<typeof BaseEvent>) => BaseEvent;
+export type EventConstructor = new (...args: ConstructorParameters<typeof BaseEvent>) => BaseEvent;

@@ -1,13 +1,12 @@
 {
     "compilerOptions": {
-        "target": "ES2022",
-        "module": "ESNext",
-        "moduleResolution": "Node16",
+        "target": "ESNext",
+        "module": "NodeNext",
+        "moduleResolution": "NodeNext",
         "lib": [
-            "ES2022"
+            "ESNext"
         ],
         "strict": true,
-        "rootDir": "src",
         "outDir": "dist",
         "esModuleInterop": true,
         "allowSyntheticDefaultImports": true,
@@ -16,11 +15,14 @@
         "skipLibCheck": true,
         "noEmitHelpers": true,
         "importHelpers": true,
-        "resolveJsonModule": true,
         "typeRoots": [
             "node_modules/@types",
-            "src/typings"
-        ]
+            "src/**/typings"
+        ],
+        "baseUrl": "./src",
+        "paths": {
+            "#rawon/*": ["*"]
+        }
     },
     "exclude": [],
     "include": [
